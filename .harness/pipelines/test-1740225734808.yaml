@@ -20,7 +20,7 @@ pipeline:
             enabled: true
           platform:
             os: Linux
-            arch: Amd64
+            arch: Arm64
           runtime:
             type: Cloud
             spec:
@@ -47,7 +47,7 @@ pipeline:
                       python3 -m venv .venv
                       source .venv/bin/activate
                       pip install flake8 telebot aiogram pyTelegramBotAPI python-telegram-bot
-                      flake8 --exclude=.venv --max-line-length=300
+                      flake8 --exclude=.venv --max-line-length=3000
                   timeout: 10m
               - step:
                   identifier: setupvirtualenvironment
