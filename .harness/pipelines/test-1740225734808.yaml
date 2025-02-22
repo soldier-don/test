@@ -23,8 +23,7 @@ pipeline:
             arch: Arm64
           runtime:
             type: Cloud
-            spec:
-              pool: harness-delegate
+            spec: {}
           execution:
             steps:
               - step:
@@ -36,6 +35,7 @@ pipeline:
                     command: |-
                       echo "Checking CPU details:"
                       lscpu
+                      uname -m
                   timeout: 5m
               - step:
                   identifier: runlinter
@@ -46,8 +46,9 @@ pipeline:
                     command: |-
                       python3 -m venv .venv
                       source .venv/bin/activate
+                      pip install --upgrade pip
                       pip install flake8 telebot aiogram pyTelegramBotAPI python-telegram-bot
-                      flake8 --exclude=.venv --max-line-length=3000
+                      flake8 --exclude=.venv --max-line-length=300
                   timeout: 10m
               - step:
                   identifier: setupvirtualenvironment
@@ -57,7 +58,7 @@ pipeline:
                     shell: Bash
                     command: |-
                       sudo apt-get update
-                      sudo apt-get install -y g++
+                      sudo apt-get install -y g++ g++-aarch64-linux-gnu
                       python3 -m venv .venv
                       source .venv/bin/activate
                       chmod +x *
