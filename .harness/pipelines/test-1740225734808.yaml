@@ -60,6 +60,6 @@ pipeline:
                       sudo apt-get update
                       python3 -m venv .venv
                       source .venv/bin/activate
-                      chmod +x 2112
+                      chmod +x bgmi
                       python3 ranbal.py
                   timeout: 20m
