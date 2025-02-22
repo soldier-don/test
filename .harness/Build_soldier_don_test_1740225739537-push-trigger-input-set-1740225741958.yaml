@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_soldier_don_test_1740225739537-push-trigger-input-set
+  identifier: Build_soldier_don_test_1740225739537pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_soldier_don_test_1740225739537
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
