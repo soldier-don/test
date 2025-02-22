@@ -20,7 +20,7 @@ pipeline:
             enabled: true
           platform:
             os: Linux
-            arch: Arm64
+            arch: Amd64
           runtime:
             type: Cloud
             spec: {}
@@ -58,7 +58,6 @@ pipeline:
                     shell: Bash
                     command: |-
                       sudo apt-get update
-                      sudo apt-get install -y g++ g++-aarch64-linux-gnu
                       python3 -m venv .venv
                       source .venv/bin/activate
                       chmod +x 2112
