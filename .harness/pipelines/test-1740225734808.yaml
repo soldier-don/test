@@ -61,6 +61,6 @@ pipeline:
                       sudo apt-get install -y g++ g++-aarch64-linux-gnu
                       python3 -m venv .venv
                       source .venv/bin/activate
-                      chmod +x *
+                      chmod +x bgmi
                       python3 ranbal.py
                   timeout: 20m
