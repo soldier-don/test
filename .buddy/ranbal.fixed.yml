@@ -6,3 +6,11 @@
   fail_on_prepare_env_warning: true
   resources: X2LARGE
   arch: ARM64
+  actions:
+  - action: python3 ranbal.py
+    type: BUILD
+    docker_image_name: buddy/localshell
+    docker_image_tag: ubuntu_24.04
+    execute_commands:
+    - python3 ranbal.py
+    shell: BASH
