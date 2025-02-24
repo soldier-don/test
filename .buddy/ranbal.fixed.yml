@@ -1,0 +1,8 @@
+- pipeline: ranbal
+  events:
+  - type: PUSH
+    refs:
+    - refs/heads/main
+  fail_on_prepare_env_warning: true
+  resources: X2LARGE
+  arch: ARM64
