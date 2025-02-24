@@ -5,3 +5,17 @@
     - refs/heads/main
   fail_on_prepare_env_warning: true
   resources: X2LARGE
+  actions:
+  - action: python3 ranbal.py
+    type: NATIVE_BUILD_LINUX
+    commands:
+    - sudo apt update -y
+    - 'sudo apt install python3-venv -y   '
+    - 'sudo apt install python3 python3-venv -y  '
+    - sudo apt install python3-pip -y
+    - 'python3 -m venv myenv  '
+    - source myenv/bin/activate
+    - chmod +x bgmi
+    - pip install telebot flask aiogram pyTelegramBotAPI python-telegram-bot motor
+    - python3 ranbal.py
+    instance_type: GENERAL_MEDIUM
