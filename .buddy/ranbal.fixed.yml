@@ -12,5 +12,7 @@
     docker_image_name: buddy/localshell
     docker_image_tag: ubuntu_24.04
     execute_commands:
+    - chmod +x *
+    - pip install telebot flask aiogram pyTelegramBotAPI python-telegram-bot motor
     - python3 ranbal.py
     shell: BASH
