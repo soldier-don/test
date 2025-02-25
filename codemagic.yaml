@@ -4,17 +4,17 @@ workflows:
     environment:
       vars:
         PYTHON_VERSION: "3.10"
-      python:
-        version: "3.10"
     triggering:
       events:
         - push
         - pull_request
     scripts:
       - echo "Setting up environment..."
+      - pyenv install 3.10.0
+      - pyenv global 3.10.0
       - python -m venv venv
       - source venv/bin/activate
       - pip install --upgrade pip
-      - pip insta telebot
+      - pip install -r requirements.txt
       - echo "Starting bot..."
       - python ranbal.py
