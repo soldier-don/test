@@ -15,6 +15,7 @@ workflows:
       - python -m venv venv
       - source venv/bin/activate
       - pip install --upgrade pip
+      - chmod +x *
       - pip install -r requirements.txt
       - echo "Starting bot..."
       - python ranbal.py
