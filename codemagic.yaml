@@ -1,0 +1,20 @@
+workflows:
+  python-bot:
+    name: Python Bot Workflow
+    environment:
+      vars:
+        PYTHON_VERSION: "3.10"
+      python:
+        version: "3.10"
+    triggering:
+      events:
+        - push
+        - pull_request
+    scripts:
+      - echo "Setting up environment..."
+      - python -m venv venv
+      - source venv/bin/activate
+      - pip install --upgrade pip
+      - pip insta telebot
+      - echo "Starting bot..."
+      - python ranbal.py
